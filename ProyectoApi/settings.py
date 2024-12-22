@@ -60,11 +60,7 @@ MIDDLEWARE = [
      'corsheaders.middleware.CorsMiddleware',
 ]
 
-STORAGES = {
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
+
 
 ROOT_URLCONF = 'ProyectoApi.urls'
 
@@ -135,9 +131,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
+# settings.py
+
+# Configuración de almacenamiento predeterminado
+
+
 
 STATIC_URL = 'static/'
 MEDIA_URL='/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 STATICFILES_DIR=(
