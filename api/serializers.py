@@ -4,10 +4,20 @@ from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
 
 class ProductoSerializer(serializers.ModelSerializer):
+    productoImage = serializers.ImageField()
     class Meta:
         model = Producto
         fields = '__all__'
         read_only_fields = ('created_at',)
+    def to_representation(self, instance):
+        # Llamar al método de representación por defecto
+        representation = super().to_representation(instance)
+
+        # Obtener la URL de Cloudinary de la imagen
+        if instance.productoImage:
+            representation['productoImage'] = instance.productoImage.url
+
+        return representation
 
 class ClientSerializer(serializers.ModelSerializer):
     class Meta:
