@@ -108,11 +108,7 @@ DATABASES = {
 }
 
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dgrtoh3hi',
-    'API_KEY': '137574469393983',
-    'API_SECRET': 'GC51cJYazX2ghwxA4X9Rf9xyWO8'
-}
+
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
