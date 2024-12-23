@@ -15,10 +15,6 @@ class ProductoViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.AllowAny]
     # permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     # authentication_classes = [authentication.BasicAuthentication]
-    def get_serializer_context(self):
-        context = super().get_serializer_context()
-        context['request'] = self.request
-        return context
     
 
 class ClientViewSet(viewsets.ModelViewSet):
