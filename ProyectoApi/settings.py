@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'api.apps.ApiConfig',
     'rest_framework.authtoken',
-     'cloudinary_storage',
+    'cloudinary_storage',
     'cloudinary',
 ]
 
